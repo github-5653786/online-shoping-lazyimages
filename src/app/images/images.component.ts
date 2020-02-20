@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 
@@ -11,11 +12,13 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 })
 export class ImagesComponent implements OnInit {
 
+  constructor(private router: Router) { }
+
   @HostListener('window:scroll', ['$event'])
   onScroll3() {
     let prev = window.pageYOffset;
     if (prev > 800) {
-      document.getElementById("top").style.visibility='visible'
+      document.getElementById("top").style.visibility = 'visible'
     } else {
       document.getElementById("top").style.visibility = 'hidden';
     }
@@ -36,8 +39,13 @@ export class ImagesComponent implements OnInit {
       this.isMobileView = true;
     }
   }
-
+  login;
   ngOnInit() {
+    if (localStorage.getItem("user") == "mustafa@gmail.com") {
+      this.login = "Logout"
+    } else {
+      this.login = "Login"
+    }
   }
 
   backtotop() {
@@ -48,4 +56,13 @@ export class ImagesComponent implements OnInit {
     });
   }
 
+  logout() {
+    if (window.confirm("Are you sure want to logout")) {
+      localStorage.removeItem("user");
+      this.router.navigate(['/signup']);
+    } else {
+      console.log("you are in same page");
+
+    }
+  }
 }

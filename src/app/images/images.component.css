@@ -45,3 +45,13 @@ marquee{
     }
 }
 
+.login{
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    cursor: pointer;
+    color: yellow;
+    border: 2px solid #dddddd;
+    padding: 5px;
+    border-radius: 4px;
+}

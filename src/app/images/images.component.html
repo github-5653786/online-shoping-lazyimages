@@ -48,7 +48,9 @@
     </carousel>
 </div>
 <marquee scrollamount="16">Welcome to Online Shopping</marquee>
-
+<h5 (click)="logout()" class="login">
+    {{login}}
+</h5>
 <!-- back to top icon -->
 <div *ngIf="isMobileView" class="top" id="top" (click)="backtotop()">
     <i style="font-size: 25px;" class='fas fa-angle-up'></i>

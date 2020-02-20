@@ -1,0 +1,13 @@
+form{
+    background-color: #DDDDDD;
+    border: 1px solid rgb(196, 189, 189);
+    border-radius: 4px 0px 0px 4px;
+    padding: 30px 20px;
+    text-align: center;
+    width: 53%;
+    margin: 50px 0px 5px 334px;
+}
+::selection{
+    color:white;
+    background-color: red;
+}

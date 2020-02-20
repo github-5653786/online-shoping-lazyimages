@@ -1,0 +1,30 @@
+<h5 style="text-align: center;">Without login you cannot see the home page</h5>
+<form #formname="ngForm" (ngSubmit)="formname.valid && validate(formname.value)">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" [(ngModel)]=number #number1="ngModel" name="email" required class="form-control"
+            id="exampleInputEmail1">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div *ngIf="number1.touched || number1.errors?.required && formname.submitted">
+            <div *ngIf="number1.errors?.required" class="alert-danger">
+                Email is Required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword2">Password</label>
+        <input type="password" [(ngModel)]=pass #pas="ngModel" name="password" required class="form-control"
+            id="exampleInputEmail2">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+        <div *ngIf="pas.touched || pas.errors?.required && formname.submitted">
+            <div *ngIf="pas.errors?.required" class="alert-danger">
+                Password is Required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
